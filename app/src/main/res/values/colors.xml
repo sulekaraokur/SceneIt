@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors - Deep Purple -->
+    <color name="primary">#5E35B1</color>
+    <color name="primary_dark">#311B92</color>
+    <color name="primary_light">#9575CD</color>
+    
+    <!-- Secondary Colors - Teal/Cyan -->
+    <color name="secondary">#00BCD4</color>
+    <color name="secondary_dark">#0097A7</color>
+    <color name="accent">#00E5FF</color>
+    
+    <!-- Background Colors - Dark Theme -->
+    <color name="background">#121212</color>
+    <color name="surface">#1E1E1E</color>
+    <color name="surface_variant">#2C2C2C</color>
+    
+    <!-- Card Colors -->
+    <color name="card_normal">#252525</color>
+    <color name="card_favorite">#2D1B4E</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_hint">#757575</color>
+    
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="error">#F44336</color>
+    <color name="warning">#FF9800</color>
+    
+    <!-- System Colors -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+</resources>

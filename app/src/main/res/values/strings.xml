@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SceneIt</string>
+    
+    <!-- Main Activity -->
+    <string name="total_series">Series</string>
+    <string name="watching">Watching</string>
+    <string name="favorites">Favorites</string>
+    <string name="my_series">My Series</string>
+    <string name="no_series_yet">No series to add yet!</string>
+    <string name="tap_add_to_start">Tap + to search and add series</string>
+    <string name="title_my_series">My TV Series</string>
+    <string name="empty_series_list">No series yet. Tap + to add one!</string>
+    <string name="add_series">Add Series</string>
+    
+    <!-- Series Actions -->
+    <string name="search">Search</string>
+    <string name="search_hint">Enter series name...</string>
+    <string name="search_empty_state">No results found. Try a different search.</string>
+    <string name="add_to_list">Add to List</string>
+    <string name="series_poster">Series Poster</string>
+    <string name="search_series">Search Series</string>
+    <string name="delete_series">Delete Series</string>
+    <string name="mark_as_favorite">Mark as Favorite</string>
+    <string name="remove_from_favorites">Remove from Favorites</string>
+    
+    <!-- Dialog -->
+    <string name="dialog_delete_title">Delete Series?</string>
+    <string name="dialog_delete_message">Are you sure you want to delete this series?</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_close">Close</string>
+    
+    <!-- Series Details -->
+    <string name="episodes_watched">Episodes Watched</string>
+    <string name="total_episodes">Total Episodes</string>
+    <string name="rating">Rating</string>
+    <string name="overview">Overview</string>
+    <string name="first_air_date">First Air Date</string>
+    
+    <!-- Toasts -->
+    <string name="series_added">Series added successfully</string>
+    <string name="series_deleted">Series deleted</string>
+    <string name="series_updated">Series updated</string>
+    <string name="added_to_favorites">Added to favorites</string>
+    <string name="removed_from_favorites">Removed from favorites</string>
+    <string name="error_loading_series">Error loading series</string>
+    <string name="no_results">No results found</string>
+    
+    <!-- Gestures -->
+    <string name="swipe_to_delete">Swipe to delete</string>
+    <string name="double_tap_favorite">Double tap to favorite</string>
+</resources>

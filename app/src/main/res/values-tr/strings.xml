@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SceneIt</string>
+    
+    <!-- Ana Ekran -->
+    <string name="title_my_series">Dizilerim</string>
+    <string name="empty_series_list">Henüz dizi yok. Eklemek için + butonuna dokunun!</string>
+    <string name="add_series">Dizi Ekle</string>
+    
+    <!-- Dizi İşlemleri -->
+    <string name="search_series">Dizi Ara</string>
+    <string name="delete_series">Diziyi Sil</string>
+    <string name="mark_as_favorite">Favorilere Ekle</string>
+    <string name="remove_from_favorites">Favorilerden Çıkar</string>
+    
+    <!-- Dialog -->
+    <string name="dialog_delete_title">Dizi Silinsin mi?</string>
+    <string name="dialog_delete_message">Bu diziyi silmek istediğinizden emin misiniz?</string>
+    <string name="dialog_yes">Evet</string>
+    <string name="dialog_no">Hayır</string>
+    <string name="dialog_close">Kapat</string>
+    
+    <!-- Dizi Detayları -->
+    <string name="episodes_watched">İzlenen Bölümler</string>
+    <string name="total_episodes">Toplam Bölüm</string>
+    <string name="rating">Puan</string>
+    <string name="overview">Özet</string>
+    <string name="first_air_date">İlk Yayın Tarihi</string>
+    
+    <!-- Bildirimler -->
+    <string name="series_added">Dizi başarıyla eklendi</string>
+    <string name="series_deleted">Dizi silindi</string>
+    <string name="series_updated">Dizi güncellendi</string>
+    <string name="added_to_favorites">Favorilere eklendi</string>
+    <string name="removed_from_favorites">Favorilerden çıkarıldı</string>
+    <string name="error_loading_series">Dizi yüklenirken hata oluştu</string>
+    <string name="no_results">Sonuç bulunamadı</string>
+    
+    <!-- Hareketler -->
+    <string name="swipe_to_delete">Silmek için kaydırın</string>
+    <string name="double_tap_favorite">Favoriye eklemek için çift dokunun</string>
+</resources>

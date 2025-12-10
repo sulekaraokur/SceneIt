@@ -1,0 +1,30 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    
+    <!-- Film reel outer circle -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="2.5"
+        android:pathData="M24,10 A14,14 0 1,1 24,38 A14,14 0 1,1 24,10" />
+    
+    <!-- Center circle -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00BCD4"
+        android:strokeWidth="1.5"
+        android:pathData="M24,18 A6,6 0 1,1 24,30 A6,6 0 1,1 24,18" />
+    
+    <!-- Play button symbol -->
+    <path
+        android:fillColor="#5E35B1"
+        android:pathData="M22,20 L22,28 L29,24 Z" />
+    
+    <!-- Film reel stripes -->
+    <path
+        android:fillColor="#9575CD"
+        android:pathData="M17,13 L17,16 M31,13 L31,16 M17,32 L17,35 M31,32 L31,35" />
+</vector>
