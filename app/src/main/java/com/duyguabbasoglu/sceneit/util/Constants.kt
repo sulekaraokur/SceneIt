@@ -7,7 +7,7 @@ object Constants {
     
     // tmdb api configuration
     const val TMDB_BASE_URL = "https://api.themoviedb.org/3/"
-    const val TMDB_IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w342"
+    const val TMDB_IMAGE_BASE_URL = "https://image.tmdb.org/t/p/"
     const val TMDB_POSTER_SIZE = "w342"
     const val TMDB_BACKDROP_SIZE = "w780"
     

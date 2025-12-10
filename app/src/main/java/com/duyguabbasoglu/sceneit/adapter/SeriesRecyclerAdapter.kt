@@ -70,6 +70,10 @@ class SeriesRecyclerAdapter(
         notifyDataSetChanged()
     }
 
+    fun getSeriesAt(position: Int): Series {
+        return seriesList[position]
+    }
+
     inner class NormalSeriesViewHolder(private val binding: ItemSeriesNormalBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -78,10 +82,10 @@ class SeriesRecyclerAdapter(
             binding.tvItemSeriesRating.text = "⭐ ${String.format("%.1f", series.voteAverage)}"
             binding.tvItemSeriesOverview.text = series.overview ?: "No overview available"
 
-            val posterUrl = Constants.TMDB_IMAGE_BASE_URL + 
-                           Constants.TMDB_POSTER_SIZE + 
-                           series.posterPath
-            
+            val posterUrl = Constants.TMDB_IMAGE_BASE_URL +
+                    Constants.TMDB_POSTER_SIZE +
+                    series.posterPath
+
             Glide.with(context)
                 .load(posterUrl)
                 .placeholder(R.drawable.ic_launcher_background)
@@ -106,13 +110,13 @@ class SeriesRecyclerAdapter(
             binding.tvItemFavSeriesName.text = series.name
             binding.tvItemFavSeriesRating.text = "⭐ ${String.format("%.1f", series.voteAverage)}"
             binding.tvItemFavSeriesOverview.text = series.overview ?: "No overview available"
-            binding.tvItemFavSeriesProgress.text = 
+            binding.tvItemFavSeriesProgress.text =
                 "Progress: ${series.watchedEpisodes}/${series.totalEpisodes} episodes"
 
-            val posterUrl = Constants.TMDB_IMAGE_BASE_URL + 
-                           Constants.TMDB_POSTER_SIZE + 
-                           series.posterPath
-            
+            val posterUrl = Constants.TMDB_IMAGE_BASE_URL +
+                    Constants.TMDB_POSTER_SIZE +
+                    series.posterPath
+
             Glide.with(context)
                 .load(posterUrl)
                 .placeholder(R.drawable.ic_launcher_background)

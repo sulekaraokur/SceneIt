@@ -3,11 +3,22 @@
     <string name="app_name">SceneIt</string>
     
     <!-- Ana Ekran -->
+    <string name="total_series">Diziler</string>
+    <string name="watching">İzleniyor</string>
+    <string name="favorites">Favoriler</string>
+    <string name="my_series">Dizilerim</string>
+    <string name="no_series_yet">Henüz dizi yok!</string>
+    <string name="tap_add_to_start">Eklemek için + butonuna dokunun</string>
     <string name="title_my_series">Dizilerim</string>
     <string name="empty_series_list">Henüz dizi yok. Eklemek için + butonuna dokunun!</string>
     <string name="add_series">Dizi Ekle</string>
     
     <!-- Dizi İşlemleri -->
+    <string name="search">Ara</string>
+    <string name="search_hint">Dizi adı girin...</string>
+    <string name="search_empty_state">Sonuç bulunamadı. Farklı bir arama yapın.</string>
+    <string name="add_to_list">Listeye Ekle</string>
+    <string name="series_poster">Dizi Posteri</string>
     <string name="search_series">Dizi Ara</string>
     <string name="delete_series">Diziyi Sil</string>
     <string name="mark_as_favorite">Favorilere Ekle</string>

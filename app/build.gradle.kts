@@ -38,6 +38,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 }
 
@@ -72,4 +73,7 @@ dependencies {
 
     // Glide (resim yüklemek için)
     implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    // CoordinatorLayout for Material Design
+    implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
 }

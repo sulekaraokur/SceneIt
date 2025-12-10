@@ -1,4 +1,4 @@
-package com.duyguabbasoglu.sceneit.db
+package com.duyguabbasoglu.sceneit.database
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

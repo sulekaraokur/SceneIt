@@ -1,4 +1,4 @@
-package com.duyguabbasoglu.sceneit
+package com.duyguabbasoglu.sceneit.ui
 
 import android.os.Bundle
 import android.view.View
@@ -6,9 +6,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.duyguabbasoglu.sceneit.R
 import com.duyguabbasoglu.sceneit.adapter.SearchResultsAdapter
 import com.duyguabbasoglu.sceneit.databinding.ActivitySearchSeriesBinding
-import com.duyguabbasoglu.sceneit.db.SeriesViewModel
+import com.duyguabbasoglu.sceneit.database.SeriesViewModel
 import com.duyguabbasoglu.sceneit.model.Series
 import com.duyguabbasoglu.sceneit.network.ApiClient
 import com.duyguabbasoglu.sceneit.network.TMDBService
@@ -59,14 +60,14 @@ class SearchSeriesActivity : AppCompatActivity(), SearchResultsAdapter.SearchRes
             if (query.isNotEmpty()) {
                 searchSeries(query)
             } else {
-                Toast.makeText(this, "Please enter a series name", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.search_hint), Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     private fun searchSeries(query: String) {
         showLoading(true)
-        
+
         tmdbService.searchTVSeries(Constants.TMDB_API_KEY, query).enqueue(object : Callback<TMDBSearchResponse> {
             override fun onResponse(call: Call<TMDBSearchResponse>, response: Response<TMDBSearchResponse>) {
                 showLoading(false)
@@ -78,13 +79,13 @@ class SearchSeriesActivity : AppCompatActivity(), SearchResultsAdapter.SearchRes
                         showResults(results)
                     }
                 } else {
-                    Toast.makeText(this@SearchSeriesActivity, "Search failed", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@SearchSeriesActivity, getString(R.string.error_loading_series), Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<TMDBSearchResponse>, t: Throwable) {
                 showLoading(false)
-                Toast.makeText(this@SearchSeriesActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@SearchSeriesActivity, "${getString(R.string.error_loading_series)}: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
     }
@@ -107,7 +108,7 @@ class SearchSeriesActivity : AppCompatActivity(), SearchResultsAdapter.SearchRes
 
     override fun onAddSeriesClick(series: Series) {
         seriesViewModel.addSeries(series)
-        Toast.makeText(this, "Added: ${series.name}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "${getString(R.string.series_added)}: ${series.name}", Toast.LENGTH_SHORT).show()
         finish()
     }
 }

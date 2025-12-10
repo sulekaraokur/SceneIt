@@ -49,7 +49,7 @@ class SearchResultsAdapter(
             binding.textViewRating.text = String.format("%.1f", series.voteAverage)
             
             val posterUrl = if (!series.posterPath.isNullOrEmpty()) {
-                "${Constants.TMDB_IMAGE_BASE_URL}${series.posterPath}"
+                "${Constants.TMDB_IMAGE_BASE_URL}${Constants.TMDB_POSTER_SIZE}${series.posterPath}"
             } else {
                 null
             }
