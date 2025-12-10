@@ -8,15 +8,8 @@ import com.duyguabbasoglu.sceneit.customview.EpisodeProgressView
 import com.duyguabbasoglu.sceneit.customview.RatingIndicatorView
 import com.duyguabbasoglu.sceneit.util.Constants
 
-/**
- * Data Binding adapters for custom views and image loading
- */
 object BindingAdapters {
 
-    /**
-     * Load image from URL using Glide
-     * Usage: app:imageUrl="@{series.posterPath}"
-     */
     @JvmStatic
     @BindingAdapter("imageUrl")
     fun loadImage(view: ImageView, posterPath: String?) {
@@ -32,20 +25,12 @@ object BindingAdapters {
         }
     }
 
-    /**
-     * Set rating on custom RatingIndicatorView
-     * Usage: app:rating="@{series.voteAverage}"
-     */
     @JvmStatic
     @BindingAdapter("rating")
     fun setRating(view: RatingIndicatorView, rating: Double?) {
         view.setRating(rating ?: 0.0)
     }
 
-    /**
-     * Set progress on custom EpisodeProgressView
-     * Usage: app:episodeProgress="@{series}"
-     */
     @JvmStatic
     @BindingAdapter("watched", "total")
     fun setProgress(view: EpisodeProgressView, watched: Int?, total: Int?) {

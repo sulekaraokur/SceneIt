@@ -15,6 +15,7 @@ class SeriesDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySeriesDetailBinding
     private lateinit var seriesViewModel: SeriesViewModel
     private lateinit var currentSeries: Series
+    private var buttonsSetup = false
 
     companion object {
         const val EXTRA_SERIES_ID = "extra_series_id"
@@ -30,7 +31,6 @@ class SeriesDetailActivity : AppCompatActivity() {
         setupToolbar()
         setupViewModel()
         loadSeriesData()
-        setupButtons()
     }
 
     private fun setupToolbar() {
@@ -77,6 +77,12 @@ class SeriesDetailActivity : AppCompatActivity() {
                 binding.progressView.setProgress(series.watchedEpisodes, series.totalEpisodes)
                 
                 updateUI()
+                
+                // Setup buttons AFTER currentSeries is initialized
+                if (!buttonsSetup) {
+                    setupButtons()
+                    buttonsSetup = true
+                }
             }
         }
     }
@@ -91,6 +97,9 @@ class SeriesDetailActivity : AppCompatActivity() {
             if (currentSeries.watchedEpisodes < currentSeries.totalEpisodes) {
                 currentSeries.watchedEpisodes++
                 updateSeriesAndUI()
+                Toast.makeText(this, "Episode increased: ${currentSeries.watchedEpisodes}/${currentSeries.totalEpisodes}", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Already watched all episodes!", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -98,6 +107,9 @@ class SeriesDetailActivity : AppCompatActivity() {
             if (currentSeries.watchedEpisodes > 0) {
                 currentSeries.watchedEpisodes--
                 updateSeriesAndUI()
+                Toast.makeText(this, "Episode decreased: ${currentSeries.watchedEpisodes}/${currentSeries.totalEpisodes}", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Already at 0!", Toast.LENGTH_SHORT).show()
             }
         }
 

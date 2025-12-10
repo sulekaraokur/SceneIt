@@ -24,7 +24,7 @@ class RatingIndicatorView(context: Context, attrs: AttributeSet?) : View(context
 
     fun setRating(value: Double) {
         rating = value.toFloat()
-        invalidate() // Redraw view
+        invalidate()
     }
 
     override fun onDraw(canvas: Canvas) {

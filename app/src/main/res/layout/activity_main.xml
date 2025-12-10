@@ -7,7 +7,6 @@
     android:background="@color/background"
     tools:context=".MainActivity">
 
-    <!-- Material Toolbar with Logo -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
@@ -21,11 +20,27 @@
             app:logo="@drawable/ic_sceneit_logo"
             app:title="@string/app_name"
             app:titleTextColor="@color/text_primary"
-            style="@style/Widget.SceneIt.Toolbar" />
+            style="@style/Widget.SceneIt.Toolbar">
+            
+            <Button
+                android:id="@+id/btnChangeLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="@string/btn_language"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/accent"
+                android:background="@android:color/transparent"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:minWidth="48dp"
+                android:minHeight="48dp"/>
+                
+        </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- Main Content with scroll behavior -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -172,7 +187,6 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Floating Action Button -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddSeries"
         android:layout_width="wrap_content"

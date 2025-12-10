@@ -1,6 +1,7 @@
 package com.duyguabbasoglu.sceneit.ui
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.GestureDetector
@@ -20,6 +21,7 @@ import com.duyguabbasoglu.sceneit.databinding.ActivityMainBinding
 import com.duyguabbasoglu.sceneit.database.SeriesViewModel
 import com.duyguabbasoglu.sceneit.model.Series
 import com.duyguabbasoglu.sceneit.customview.RatingIndicatorView
+import com.duyguabbasoglu.sceneit.util.LocaleHelper
 
 class MainActivity : AppCompatActivity(),
     SeriesRecyclerAdapter.SeriesAdapterInterface {
@@ -28,6 +30,10 @@ class MainActivity : AppCompatActivity(),
     private lateinit var seriesViewModel: SeriesViewModel
     private lateinit var adapter: SeriesRecyclerAdapter
     private lateinit var gestureDetector: GestureDetector
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(LocaleHelper.setLocale(newBase, LocaleHelper.getLanguage(newBase)))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +50,10 @@ class MainActivity : AppCompatActivity(),
             binding.fabAddSeries.setOnClickListener {
                 val intent = Intent(this, SearchSeriesActivity::class.java)
                 startActivity(intent)
+            }
+            
+            binding.btnChangeLanguage.setOnClickListener {
+                changeLanguage()
             }
 
         } catch (e: Exception) {
@@ -220,5 +230,13 @@ class MainActivity : AppCompatActivity(),
         }
 
         dialog.show()
+    }
+
+    private fun changeLanguage() {
+        val currentLang = LocaleHelper.getLanguage(this)
+        val newLang = if (currentLang == "tr") "en" else "tr"
+        LocaleHelper.setLocale(this, newLang)
+        Toast.makeText(this, getString(R.string.toast_language_changed), Toast.LENGTH_SHORT).show()
+        recreate()
     }
 }

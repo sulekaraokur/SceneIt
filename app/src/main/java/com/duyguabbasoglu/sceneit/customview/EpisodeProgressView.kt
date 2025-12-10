@@ -8,10 +8,6 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 
-/**
- * Custom View showing episode watch progress with Canvas and Paint
- * Displays circular progress indicator with watched/total episodes
- */
 class EpisodeProgressView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -63,7 +59,7 @@ class EpisodeProgressView @JvmOverloads constructor(
         val centerY = height / 2
         val radius = (minOf(width, height) / 2) * 0.85f
 
-        // Set bounds for arc
+        // arc
         rect.set(
             centerX - radius,
             centerY - radius,
@@ -71,10 +67,8 @@ class EpisodeProgressView @JvmOverloads constructor(
             centerY + radius
         )
 
-        // Draw background circle
         canvas.drawCircle(centerX, centerY, radius, backgroundPaint)
 
-        // Draw progress arc
         if (totalEpisodes > 0) {
             val sweepAngle = (progressPercentage / 100f) * 360f
             canvas.drawArc(rect, -90f, sweepAngle, false, progressPaint)
@@ -87,7 +81,7 @@ class EpisodeProgressView @JvmOverloads constructor(
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val minSize = 100 // Minimum size in pixels
+        val minSize = 100
         val width = resolveSize(minSize, widthMeasureSpec)
         val height = resolveSize(minSize, heightMeasureSpec)
         val size = minOf(width, height)

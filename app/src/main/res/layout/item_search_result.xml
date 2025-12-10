@@ -12,7 +12,6 @@
         android:orientation="horizontal"
         android:padding="12dp">
 
-        <!-- Poster Image -->
         <ImageView
             android:id="@+id/imageViewPoster"
             android:layout_width="80dp"

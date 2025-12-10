@@ -107,6 +107,8 @@ class SearchSeriesActivity : AppCompatActivity(), SearchResultsAdapter.SearchRes
     }
 
     override fun onAddSeriesClick(series: Series) {
+        // Set default totalEpisodes for tracking (user can update in detail screen later)
+        series.totalEpisodes = 10
         seriesViewModel.addSeries(series)
         Toast.makeText(this, "${getString(R.string.series_added)}: ${series.name}", Toast.LENGTH_SHORT).show()
         finish()

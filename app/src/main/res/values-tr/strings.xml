@@ -50,4 +50,19 @@
     <!-- Hareketler -->
     <string name="swipe_to_delete">Silmek için kaydırın</string>
     <string name="double_tap_favorite">Favoriye eklemek için çift dokunun</string>
+    
+    <!-- Detay Ekranı -->
+    <string name="notes">Notlar</string>
+    <string name="save_notes">Notları Kaydet</string>
+    <string name="notes_hint">Bu dizi hakkında notlarınızı ekleyin...</string>
+    
+    <!-- Yer Tutucular -->
+    <string name="zero">0</string>
+    <string name="placeholder_series_name">Dizi Adı</string>
+    <string name="placeholder_overview">Özet metni buraya...</string>
+    <string name="placeholder_progress">İlerleme: 5/10 bölüm</string>
+    
+    <!-- Dil Değiştirme -->
+    <string name="btn_language">EN</string>
+    <string name="toast_language_changed">Language changed to English</string>
 </resources>

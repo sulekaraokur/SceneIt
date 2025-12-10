@@ -50,4 +50,19 @@
     <!-- Gestures -->
     <string name="swipe_to_delete">Swipe to delete</string>
     <string name="double_tap_favorite">Double tap to favorite</string>
+    
+    <!-- Detail Activity -->
+    <string name="notes">Notes</string>
+    <string name="save_notes">Save Notes</string>
+    <string name="notes_hint">Add your notes about this series...</string>
+    
+    <!-- Placeholders -->
+    <string name="zero">0</string>
+    <string name="placeholder_series_name">Series Name</string>
+    <string name="placeholder_overview">Overview text here...</string>
+    <string name="placeholder_progress">Progress: 5/10 episodes</string>
+    
+    <!-- Language Switch -->
+    <string name="btn_language">TR</string>
+    <string name="toast_language_changed">Dil Türkçe olarak değiştirildi</string>
 </resources>

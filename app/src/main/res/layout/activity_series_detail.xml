@@ -176,7 +176,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Notes"
+                            android:text="@string/notes"
                             android:textStyle="bold"
                             android:textSize="18sp"
                             android:layout_marginBottom="12dp"/>
@@ -186,7 +186,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="120dp"
                             android:gravity="top|start"
-                            android:hint="Add your notes about this series..."
+                            android:hint="@string/notes_hint"
+                            android:textColor="#000000"
+                            android:textColorHint="#757575"
                             android:inputType="textMultiLine"
                             android:padding="12dp"
                             android:background="@android:drawable/editbox_background"/>
@@ -197,7 +199,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
                             android:layout_marginTop="8dp"
-                            android:text="Save Notes"
+                            android:text="@string/save_notes"
                             app:cornerRadius="8dp"/>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>

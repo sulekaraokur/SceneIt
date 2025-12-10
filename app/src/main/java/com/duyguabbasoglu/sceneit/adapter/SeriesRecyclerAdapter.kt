@@ -123,6 +123,14 @@ class SeriesRecyclerAdapter(
                 .error(R.drawable.ic_launcher_background)
                 .into(binding.imgItemFavSeriesPoster)
 
+            // Show notes if available
+            if (!series.notes.isNullOrEmpty()) {
+                binding.tvItemFavSeriesNotes.visibility = android.view.View.VISIBLE
+                binding.tvItemFavSeriesNotes.text = "📝 ${series.notes}"
+            } else {
+                binding.tvItemFavSeriesNotes.visibility = android.view.View.GONE
+            }
+
             binding.favoriteItemLayout.setOnClickListener {
                 adapterInterface.onSeriesClick(series)
             }
