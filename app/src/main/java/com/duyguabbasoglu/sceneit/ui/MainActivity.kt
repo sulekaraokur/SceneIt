@@ -1,5 +1,9 @@
 package com.duyguabbasoglu.sceneit.ui
 
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
+import java.util.concurrent.TimeUnit
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
@@ -22,6 +26,8 @@ import com.duyguabbasoglu.sceneit.database.SeriesViewModel
 import com.duyguabbasoglu.sceneit.model.Series
 import com.duyguabbasoglu.sceneit.customview.RatingIndicatorView
 import com.duyguabbasoglu.sceneit.util.LocaleHelper
+import com.duyguabbasoglu.sceneit.worker.SyncWorker
+import android.media.MediaPlayer
 
 class MainActivity : AppCompatActivity(),
     SeriesRecyclerAdapter.SeriesAdapterInterface {
@@ -56,10 +62,28 @@ class MainActivity : AppCompatActivity(),
                 changeLanguage()
             }
 
+            //PeriodicWorkRequestBuilder
+            val workRequest =
+                PeriodicWorkRequestBuilder<SyncWorker>(
+                    6, TimeUnit.HOURS
+                ).build()
+
+            WorkManager.getInstance(this)
+                .enqueueUniquePeriodicWork(
+                    "sceneit_sync", //unique name
+                    //ExistingPeriodicWorkPolicy.REPLACE,
+                    ExistingPeriodicWorkPolicy.KEEP, //save the old one , do not add extra, aynı backgroundda tekrar tekrar başlatılmasını önler.
+                    workRequest
+                )
+
+
         } catch (e: Exception) {
             e.printStackTrace()
             Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_LONG).show()
         }
+
+
+
     }
 
     private fun setupToolbar() {
@@ -130,10 +154,14 @@ class MainActivity : AppCompatActivity(),
         builder.setMessage("${getString(R.string.dialog_delete_message)}: ${series.name}")
 
         builder.setPositiveButton(getString(R.string.dialog_yes)) { _, _ ->
+
+            MediaPlayer.create(this, R.raw.delete_sound).start()
+
             seriesViewModel.deleteSeries(series) {
                 Toast.makeText(this, getString(R.string.series_deleted), Toast.LENGTH_SHORT).show()
             }
         }
+
 
         builder.setNegativeButton(getString(R.string.dialog_no)) { dialog, _ ->
             adapter.notifyItemChanged(position)
@@ -149,6 +177,14 @@ class MainActivity : AppCompatActivity(),
 
     private fun toggleFavorite(series: Series) {
         series.isFavorite = !series.isFavorite
+
+        val soundRes = if (series.isFavorite)
+            R.raw.favorite_sound
+        else
+            R.raw.delete_sound
+
+        MediaPlayer.create(this, soundRes).start()
+
         seriesViewModel.updateSeries(series) {
             val msg = if (series.isFavorite)
                 getString(R.string.added_to_favorites)
@@ -157,6 +193,7 @@ class MainActivity : AppCompatActivity(),
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
         }
     }
+
 
     private fun setupViewModel() {
         seriesViewModel = ViewModelProvider(this)[SeriesViewModel::class.java]
@@ -240,3 +277,4 @@ class MainActivity : AppCompatActivity(),
         recreate()
     }
 }
+

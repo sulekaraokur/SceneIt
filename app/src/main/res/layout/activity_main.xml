@@ -21,7 +21,7 @@
             app:title="@string/app_name"
             app:titleTextColor="@color/text_primary"
             style="@style/Widget.SceneIt.Toolbar">
-            
+
             <Button
                 android:id="@+id/btnChangeLanguage"
                 android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
                 android:paddingEnd="12dp"
                 android:minWidth="48dp"
                 android:minHeight="48dp"/>
-                
+
         </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -165,9 +165,19 @@
                 android:padding="32dp"
                 android:visibility="gone">
 
+                <!-- LOTTIE ANIMATION -->
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    app:lottie_rawRes="@raw/empty_state_animation"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true" />
+
+                <!-- EMPTY STATE TEXT -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="@string/no_series_yet"
                     android:textColor="@color/text_secondary"
                     android:textSize="18sp"
@@ -182,6 +192,7 @@
                     android:textSize="14sp"
                     android:gravity="center" />
             </LinearLayout>
+
 
         </LinearLayout>
 
