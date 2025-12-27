@@ -28,7 +28,7 @@ class EpisodeProgressView @JvmOverloads constructor(
     }
 
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.BLACK
+        color = Color.WHITE
         textSize = 32f
         textAlign = Paint.Align.CENTER
         isFakeBoldText = true

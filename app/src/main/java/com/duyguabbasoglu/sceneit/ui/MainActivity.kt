@@ -38,7 +38,8 @@ class MainActivity : AppCompatActivity(),
     private lateinit var gestureDetector: GestureDetector
 
     override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(LocaleHelper.setLocale(newBase, LocaleHelper.getLanguage(newBase)))
+        val lang = com.duyguabbasoglu.sceneit.util.LocaleHelper.getLanguage(newBase)
+        super.attachBaseContext(com.duyguabbasoglu.sceneit.util.LocaleHelper.setLocale(newBase, lang))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

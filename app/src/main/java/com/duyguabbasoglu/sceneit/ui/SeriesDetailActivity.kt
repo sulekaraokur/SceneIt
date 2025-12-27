@@ -1,5 +1,6 @@
 package com.duyguabbasoglu.sceneit.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,11 @@ class SeriesDetailActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_SERIES_ID = "extra_series_id"
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        val lang = com.duyguabbasoglu.sceneit.util.LocaleHelper.getLanguage(newBase)
+        super.attachBaseContext(com.duyguabbasoglu.sceneit.util.LocaleHelper.setLocale(newBase, lang))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

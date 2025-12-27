@@ -16,7 +16,7 @@ class RatingIndicatorView(context: Context, attrs: AttributeSet?) : View(context
     private val rect = RectF()
 
     init {
-        textPaint.color = Color.BLACK
+        textPaint.color = Color.WHITE
         textPaint.textSize = 40f
         textPaint.textAlign = Paint.Align.CENTER
         textPaint.isFakeBoldText = true

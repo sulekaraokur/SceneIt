@@ -1,5 +1,6 @@
 package com.duyguabbasoglu.sceneit.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -25,6 +26,11 @@ class SearchSeriesActivity : AppCompatActivity(), SearchResultsAdapter.SearchRes
     private lateinit var seriesViewModel: SeriesViewModel
     private lateinit var adapter: SearchResultsAdapter
     private lateinit var tmdbService: TMDBService
+
+    override fun attachBaseContext(newBase: Context) {
+        val lang = com.duyguabbasoglu.sceneit.util.LocaleHelper.getLanguage(newBase)
+        super.attachBaseContext(com.duyguabbasoglu.sceneit.util.LocaleHelper.setLocale(newBase, lang))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

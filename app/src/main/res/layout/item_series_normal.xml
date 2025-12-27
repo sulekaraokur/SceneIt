@@ -33,7 +33,7 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:text="Series Name"
-            android:textColor="@android:color/black"
+            android:textColor="@color/primary_light"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

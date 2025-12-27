@@ -14,10 +14,6 @@ class SyncWorker(
         // Background task
         Log.d("SceneItWorker", "Background sync executed")
 
-        // Burada ileride:
-        // - favori diziler kontrol edilir
-        // - izleme ilerlemesi sync edilir
-
         return Result.success()
     }
 }

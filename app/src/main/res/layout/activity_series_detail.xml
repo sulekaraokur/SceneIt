@@ -133,11 +133,14 @@
 
                             <Button
                                 android:id="@+id/btnDecreaseEpisodes"
-                                android:layout_width="48dp"
+                                android:layout_width="56dp"
                                 android:layout_height="48dp"
                                 android:text="-"
+                                android:textColor="#FFFFFF"
+                                android:textColorHighlight="#FFFFFF"
+                                android:textColorLink="#E9E9E9"
                                 android:textSize="20sp"
-                                app:cornerRadius="24dp"/>
+                                app:cornerRadius="24dp" />
 
                             <TextView
                                 android:id="@+id/tvEpisodeCount"
@@ -151,11 +154,14 @@
 
                             <Button
                                 android:id="@+id/btnIncreaseEpisodes"
-                                android:layout_width="48dp"
+                                android:layout_width="57dp"
                                 android:layout_height="48dp"
                                 android:text="+"
+                                android:textColor="#FFFFFF"
+                                android:textColorHighlight="#FFFFFF"
+                                android:textColorLink="#FFFFFF"
                                 android:textSize="20sp"
-                                app:cornerRadius="24dp"/>
+                                app:cornerRadius="24dp" />
                         </LinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>

@@ -4,8 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/chrtree"
     tools:context=".MainActivity">
+
+    <com.duyguabbasoglu.sceneit.customview.SnowView
+        android:id="@+id/snowView"
+        android:layout_width="423dp"
+        android:layout_height="737dp"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -15,27 +25,27 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
+            style="@style/Widget.SceneIt.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:logo="@drawable/ic_sceneit_logo"
             app:title="@string/app_name"
-            app:titleTextColor="@color/text_primary"
-            style="@style/Widget.SceneIt.Toolbar">
+            app:titleTextColor="@color/text_primary">
 
             <Button
                 android:id="@+id/btnChangeLanguage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:text="@string/btn_language"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/accent"
                 android:background="@android:color/transparent"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:minWidth="48dp"
-                android:minHeight="48dp"/>
+                android:text="@string/btn_language"
+                android:textColor="@color/accent"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
         </com.google.android.material.appbar.MaterialToolbar>
 
@@ -56,17 +66,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:background="@color/surface_variant"
-                android:padding="16dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/tvTotalSeries"
@@ -89,8 +99,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/tvWatchingSeries"
@@ -113,8 +123,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/tvFavoriteSeries"
@@ -169,28 +179,28 @@
                 <com.airbnb.lottie.LottieAnimationView
                     android:layout_width="200dp"
                     android:layout_height="200dp"
-                    app:lottie_rawRes="@raw/empty_state_animation"
                     app:lottie_autoPlay="true"
-                    app:lottie_loop="true" />
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/empty_state_animation" />
 
                 <!-- EMPTY STATE TEXT -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:gravity="center"
                     android:text="@string/no_series_yet"
                     android:textColor="@color/text_secondary"
-                    android:textSize="18sp"
-                    android:gravity="center" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:gravity="center"
                     android:text="@string/tap_add_to_start"
                     android:textColor="@color/text_hint"
-                    android:textSize="14sp"
-                    android:gravity="center" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
 
@@ -200,12 +210,12 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddSeries"
+        style="@style/Widget.SceneIt.FloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:contentDescription="@string/add_series"
-        style="@style/Widget.SceneIt.FloatingActionButton"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
