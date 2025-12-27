@@ -7,15 +7,14 @@ plugins {
 
 android {
     namespace = "com.duyguabbasoglu.sceneit"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.duyguabbasoglu.sceneit"
-        minSdk = 34
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -28,10 +27,12 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
     }
@@ -41,7 +42,6 @@ android {
         dataBinding = true
     }
 }
-
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -49,31 +49,43 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    val room_version = "2.6.0"
-    implementation("androidx.room:room-runtime:$room_version")
-    implementation("androidx.room:room-ktx:$room_version")
-    ksp("androidx.room:room-compiler:$room_version")
+    // Room
+    val roomVersion = "2.6.1"
+    implementation("androidx.room:room-runtime:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+    ksp("androidx.room:room-compiler:$roomVersion")
 
-    // Lifecycle components
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.3")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.3")
-    implementation("androidx.lifecycle:lifecycle-common-java8:2.8.3")
-    // Kotlin coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+    // Lifecycle
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.4")
 
-    // Retrofit (internetten veri çekmek için)
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+
+    // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
-    // Glide (resim yüklemek için)
+    // Glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
+<<<<<<< Updated upstream
     // CoordinatorLayout for Material Design
     implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
 }
+=======
+    // WorkManager (SAĞLAM)
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+
+    // Lottie (external library – puanlık)
+    implementation("com.airbnb.android:lottie:6.1.0")
+}
+>>>>>>> Stashed changes
